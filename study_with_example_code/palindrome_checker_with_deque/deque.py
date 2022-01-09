@@ -1,6 +1,6 @@
-from queue import Queue
+from class_queue import Class_Queue
 
-class Deque(Queue):
+class Deque(Class_Queue):
     def enqueue_back(self, item):
         self.items.append(item)
 
@@ -16,10 +16,10 @@ if __name__ == "__main__":
     print("데크(Deque)가 비었나요? {0}".format(deque.isEmpty()))
     print("데크에 숫자 0~9를 추가합니다.")
     for i in range(10):
-        deque.enqueue(i)
+        deque.enqueue_back(i)
     print("데크 크기: {0}".format(deque.size()))
     print("peek: {0}".format(deque.peek()))
-    print("dequeue: {0}".format(deque.dequeue()))
+    print("dequeue: {0}".format(deque.dequeue_front()))
     print("peek: {0}".format(deque.peek()))
     print("데크가 비었나요? {0}".format(deque.isEmpty()))
     print()
