@@ -1,4 +1,4 @@
-
+from stack import Stack
 
 class SetOfStacks(Stack):
     def __init__(self, capacity=4):
@@ -8,13 +8,13 @@ class SetOfStacks(Stack):
 
     def push(self, value):
         if self.size() >= self.capacity:
-            self.setofstacks.append(self.items)
-            self.items = []
+            self.setofstacks.append(self.items) # stack 채로 넣는 방식으로 구현
+            self.items = [] # 해당 stack 초기화
         self.items.append(value)
 
     def pop(self):
         value = self.items.pop()
-        if self.isEmpty() and self.setofstacks:
+        if self.isEmpty() and self.setofstacks: # self.items이 []이고 self.setofstacks가 []가 아니면 self.setofstacks의 마지막 값을 self.items에 대입
             self.items = self.setofstacks.pop()
         return value
 
@@ -24,7 +24,7 @@ class SetOfStacks(Stack):
     def __repr__(self):
         aux = []
         for s in self.setofstacks:
-            aux.extend(s)
+            aux.extend(s) # list.extend(iterable)는 리스트 끝에 가장 바깥쪽 iterable의 모든 항목을 넣습니다.
         aux.extend(self.items)
         return repr(aux)
 
