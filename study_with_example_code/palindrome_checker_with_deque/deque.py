@@ -1,3 +1,6 @@
+# 데크는 스택과 큐의 결합체
+# 항목의 양쪽 끝에서 항목의 조회, 삽입, 삭제 가능
+
 from class_queue import Class_Queue
 
 class Deque(Class_Queue):
